@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import "config";
+@import "menu";
 
 * {
   box-sizing: border-box;
@@ -57,7 +58,7 @@ main {
       padding: 0.4rem;
       &:hover {
         color: $secondary-color;
-        @include transition();
+        @include transition;
       }
     }
   }
