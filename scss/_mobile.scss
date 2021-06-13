@@ -19,6 +19,15 @@
   .menu.show {
     width: 100%;
   }
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "skill1"
+      "skill2"
+      "skill3";
+    grid-template-columns: 1fr;
+  }
 }
 
 // smartphones
