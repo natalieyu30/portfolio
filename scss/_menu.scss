@@ -10,7 +10,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: set-text-color($primary-color);
     @include transition;
   }
 
@@ -74,10 +74,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .portrait {
-      // margin-top: 3rem;
+
+    .image-wrap {
       width: 200px;
       height: 200px;
+    }
+    .portrait {
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       border: 3px solid #eee;
     }
@@ -108,6 +112,7 @@
     font-size: 26px;
     padding: 1rem 0;
     font-weight: 600;
+    color: set-text-color($primary-color);
     @include transition;
 
     &:hover {
