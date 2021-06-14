@@ -165,6 +165,36 @@ main {
   }
 }
 
+// contact page
+.boxes {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 1.5rem;
+    border: solid 3px #fff;
+    padding: 1rem 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    @include transition;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+    span {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
 #main-footer {
   text-align: center;
   padding: 1rem;
