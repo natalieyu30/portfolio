@@ -44,6 +44,10 @@ header {
   width: 100%;
 }
 
+.text-primary {
+  color: lighten($primary-color, 10);
+}
+
 .text-secondary {
   color: $secondary-color;
 }
