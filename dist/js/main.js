@@ -6,6 +6,7 @@ const menuBranding = document.querySelector('.menu-branding');
 const menuNav = document.querySelector('.menu-nav');
 const navItems = document.querySelectorAll('.nav-item');
 
+
 // Set initial state of menu
 let showMenu = false;
 
@@ -21,6 +22,7 @@ function toggleMenu() {
 
     // set menu state
     showMenu= true;
+    // console.log('ture')
   } else {
     menuBtn.classList.remove('close');
     menu.classList.remove('show');
@@ -32,3 +34,10 @@ function toggleMenu() {
     showMenu= false;
   }
 }
+
+
+
+
+const currentYear = document.querySelector('.get-year');
+const getYear = new Date().getFullYear().toString()
+currentYear.textContent=getYear

@@ -48,7 +48,7 @@
     right: 0;
     width: 50%;
     height: 100vh;
-    background: darken($primary-color, 5);
+    background: linear-gradient(darken($primary-color, 5), darken(#eee, 15));
     // background: $primary-color;
     transform: translate(0, 0);
     @include transition;
@@ -101,7 +101,7 @@
       transform: translate(0, 0);
     }
     &.current > a {
-      color: $secondary-color;
+      color: darken($primary-color, 10);
     }
   }
 
@@ -116,7 +116,7 @@
     @include transition;
 
     &:hover {
-      color: $secondary-color;
+      color: darken($primary-color, 5);
     }
   }
 }
@@ -124,6 +124,6 @@
 // delay each nav item slide by 0.1s
 @for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.1s;
+    transition-delay: $x * 0.15s;
   }
 }

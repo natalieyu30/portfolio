@@ -24,10 +24,10 @@ h3 {
   font-weight: 500;
 
   &.lg-heading {
-    font-size: 6rem;
+    font-size: 5.5rem;
   }
   &.sm-heading {
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
     padding: 0.2rem 0;
     // background: rgba(lighten($primary-color, 2), 0.5);
   }
@@ -49,20 +49,20 @@ header {
 }
 
 .text-secondary {
-  color: $secondary-color;
+  color: darken($secondary-color, 10);
 }
 
 main {
   padding: 4rem;
   // height: 100%;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 70px);
 
   .icons {
     margin-top: 1rem;
     a {
       padding: 0.4rem;
       &:hover {
-        color: $secondary-color;
+        color: lighten($primary-color, 20);
         @include transition;
       }
     }
@@ -78,7 +78,7 @@ main {
 
 #about,
 #work {
-  padding: 2rem 4rem;
+  padding: 1.5rem 4rem;
 }
 .about-info {
   display: grid;
@@ -91,18 +91,24 @@ main {
   .img-wrap {
     grid-area: bioimage;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
   .bio-image {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: solid 3px gray;
+    border: solid 3px #eee;
   }
   .bio {
     grid-area: bio;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    h3 {
+      font-weight: 600;
+    }
+    p {
+      margin-top: 0.4rem;
+    }
   }
   .skill-1 {
     grid-area: skill1;
@@ -115,10 +121,13 @@ main {
   }
 
   .skill {
-    background: lighten($primary-color, 8);
+    background: lighten($primary-color, 12);
     padding: 0.5rem;
-    border-bottom: 5px solid $secondary-color;
+    border-bottom: 5px solid #eee;
     border-radius: 8px;
+    p {
+      margin: 0.6rem 0;
+    }
   }
   .language {
     margin-top: 0.8rem;
@@ -128,15 +137,23 @@ main {
 
 // work/Projects
 .projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  // grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .item {
+    margin: 1rem;
+  }
   .img-wrap {
     overflow: hidden;
     position: relative;
     &:hover img {
-      opacity: 0.8;
-      border-color: $secondary-color;
+      opacity: 0.6;
+      // transform: scale(1.1);
+      border-color: white;
       @include transition;
     }
     &:hover .link-wrap {
@@ -145,25 +162,29 @@ main {
     }
   }
   img {
+    max-width: 500px;
     width: 100%;
     height: 100%;
-    border: 3px solid #fff;
     background-color: #000;
+    border: 3px #eee solid;
+    border-radius: 6px;
   }
   .link-wrap {
+    overflow: hidden;
     opacity: 0;
     position: absolute;
     bottom: 10px;
     left: 3px;
-    background-color: rgba(0, 0, 0, 0.6);
     width: calc(100% - 6px);
     padding: 8px;
   }
   a {
     display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
     padding: 0 10px;
     &:hover {
-      color: $secondary-color;
+      color: #ddd;
       @include transition;
     }
   }
@@ -172,39 +193,46 @@ main {
 // contact page
 .boxes {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   margin-top: 1rem;
 
-  div {
+  .contact-image {
+    max-width: 550px;
+    margin-right: 20px;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .contact-box {
     font-size: 1.5rem;
-    border: solid 3px #fff;
-    padding: 1rem 2.5rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
+    border: solid 3px #eee;
+    border-radius: 8px;
+    padding: 0.6rem 2rem;
+    font-weight: 400;
     @include transition;
 
     &:hover {
-      background-color: $secondary-color;
-      color: set-text-color($secondary-color);
-      span {
-        color: set-text-color($secondary-color);
-      }
+      // background-color: lighten($primary-color, 4);
     }
     span {
-      margin-right: 0.5rem;
+      margin-right: 0.8rem;
+      @include transition;
     }
+  }
+  .info:hover span {
+    color: #eee;
   }
 }
 
 #main-footer {
   text-align: center;
-  padding: 1rem;
-  background: darken($primary-color, 10);
+  padding: 1.5rem;
+  background: darken($primary-color, 15);
   color: set-text-color($primary-color);
-  height: 60px;
+  height: 70px;
 }
 
 @import "mobile";
