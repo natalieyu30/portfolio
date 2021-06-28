@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 .menu-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 10;
   right: 35px;
   top: 35px;
   cursor: pointer;
@@ -33,7 +33,8 @@
     right: 0;
     width: 50%;
     height: 100vh;
-    background: linear-gradient(#014982, #c8c8c8);
+    background: linear-gradient(rgba(1, 87, 155, 0.6), rgba(51, 51, 51, 0.7));
+    backdrop-filter: blur(5px);
     transform: translate(0, 0);
     transition: all 0.5s ease-out;
     display: flex;
@@ -64,7 +65,7 @@
     .menu .nav-item.show {
       transform: translate(0, 0); }
     .menu .nav-item.current > a {
-      color: #013b68; }
+      color: #eca113; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -75,7 +76,7 @@
     color: #fff;
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
-      color: #014982; }
+      color: #d49111; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.15s; }
@@ -93,7 +94,7 @@
   box-sizing: border-box; }
 
 body {
-  background: #01579b;
+  background: linear-gradient(#01579b, #001e36);
   color: #fff;
   height: 100%;
   margin: 0;
@@ -110,7 +111,7 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(1, 87, 155, 0.3);
+      background: rgba(0, 0, 0, 0.4);
       z-index: -1; }
 
 h1,
@@ -141,7 +142,7 @@ header {
   color: #0173ce; }
 
 .text-secondary {
-  color: #a68f87; }
+  color: #bd810f; }
 
 main {
   padding: 4rem;
@@ -156,7 +157,31 @@ main {
   main#home {
     overflow: hidden; }
     main#home h1 {
-      margin-top: 20vh; }
+      margin-top: 16vh; }
+    main#home h2 {
+      margin-bottom: 0; }
+    main#home p {
+      margin-top: 0;
+      font-size: 1.2rem; }
+    main#home .buttons {
+      margin-top: 2rem; }
+      main#home .buttons a {
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 0.4rem 1rem;
+        margin-right: 1rem;
+        border: solid 2px #eee;
+        border-radius: 20px;
+        transition: all 0.5s ease-out; }
+        main#home .buttons a:hover {
+          color: #01579b;
+          border-color: #01579b;
+          background-color: rgba(255, 255, 255, 0.3);
+          transition: all 0.5s ease-out; }
+    main#home .icons {
+      position: fixed;
+      width: 100%;
+      bottom: 10%; }
 
 #about,
 #work {
@@ -201,9 +226,14 @@ main {
     margin-top: 0.8rem;
     width: 150px; }
 
+#work h1,
+#work h2 {
+  padding-left: 1.25rem; }
+
 .projects {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 16px;
   justify-content: center;
   align-items: center; }
   .projects .item {
@@ -219,7 +249,7 @@ main {
       opacity: 1;
       transition: all 0.5s ease-out; }
   .projects img {
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -248,22 +278,26 @@ main {
   align-items: center;
   margin-top: 1rem; }
   .boxes .contact-image {
-    max-width: 550px;
-    margin-right: 20px; }
+    max-width: 500px;
+    margin-right: 40px; }
   .boxes .image {
     width: 100%; }
   .boxes .contact-box {
-    font-size: 1.5rem;
-    border: solid 3px #eee;
-    border-radius: 8px;
-    padding: 0.6rem 2rem;
+    font-size: 1.4rem;
+    padding-right: 2rem;
     font-weight: 400;
     transition: all 0.5s ease-out; }
+    .boxes .contact-box p {
+      color: #ddd; }
     .boxes .contact-box span {
       margin-right: 0.8rem;
       transition: all 0.5s ease-out; }
+    .boxes .contact-box .icons {
+      margin-top: 5rem; }
   .boxes .info:hover span {
     color: #eee; }
+  .boxes .info:hover {
+    color: #fff; }
 
 #main-footer {
   text-align: center;
@@ -271,6 +305,16 @@ main {
   background: #012c4f;
   color: #fff;
   height: 70px; }
+
+@media screen and (min-width: 1171px) {
+  #contact .lg-heading,
+  #contact .sm-heading {
+    margin-left: 10rem; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .boxes .contact-image {
+    max-width: 380px;
+    margin-right: 32px; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -281,6 +325,9 @@ main {
       margin-bottom: 1rem; }
   .menu.show {
     width: 100%; }
+  #home .icons {
+    left: 50%;
+    transform: translateX(-50%); }
   #about .lg-heading,
   #work .lg-heading,
   #contact .lg-heading {
@@ -298,7 +345,15 @@ main {
     display: none; }
   .boxes .contact-box {
     margin-top: 2rem;
-    text-align: start; } }
+    align-content: center;
+    padding: 0 2rem; }
+    .boxes .contact-box .info {
+      text-align: start; }
+    .boxes .contact-box .icons {
+      position: fixed;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {

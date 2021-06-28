@@ -8,7 +8,8 @@
 
 body {
   @include background;
-  background: $primary-color;
+  background: linear-gradient($primary-color, darken($primary-color, 20));
+  // background: rgba($primary-color, 0.8);
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
@@ -71,7 +72,40 @@ main {
   &#home {
     overflow: hidden;
     h1 {
-      margin-top: 20vh;
+      margin-top: 16vh;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      a {
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 0.4rem 1rem;
+        margin-right: 1rem;
+        border: solid 2px #eee;
+        border-radius: 20px;
+        @include transition;
+
+        &:hover {
+          color: $primary-color;
+          border-color: $primary-color;
+          background-color: rgba(255, 255, 255, 0.3);
+          @include transition;
+        }
+      }
+    }
+
+    .icons {
+      position: fixed;
+      width: 100%;
+      bottom: 10%;
     }
   }
 }
@@ -136,12 +170,25 @@ main {
 }
 
 // work/Projects
+#work {
+  h1,
+  h2 {
+    padding-left: 1.25rem;
+  }
+}
+
+// #contact {
+//   .lg-heading,
+//   .sm-heading {
+//     margin-left: 20rem;
+//   }
+// }
 .projects {
-  // display: grid;
-  // grid-template-columns: repeat(2, 1fr);
-  // grid-gap: 20px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 16px;
+  // display: flex;
+  // flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   .item {
@@ -162,7 +209,7 @@ main {
     }
   }
   img {
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -198,8 +245,8 @@ main {
   margin-top: 1rem;
 
   .contact-image {
-    max-width: 550px;
-    margin-right: 20px;
+    max-width: 500px;
+    margin-right: 40px;
   }
 
   .image {
@@ -207,23 +254,31 @@ main {
   }
 
   .contact-box {
-    font-size: 1.5rem;
-    border: solid 3px #eee;
-    border-radius: 8px;
-    padding: 0.6rem 2rem;
+    font-size: 1.4rem;
+    // border: solid 3px #ddd;
+    // border-radius: 8px;
+    padding-right: 2rem;
     font-weight: 400;
     @include transition;
 
-    &:hover {
-      // background-color: lighten($primary-color, 4);
+    p {
+      color: #ddd;
     }
+
     span {
       margin-right: 0.8rem;
       @include transition;
     }
+
+    .icons {
+      margin-top: 5rem;
+    }
   }
   .info:hover span {
     color: #eee;
+  }
+  .info:hover {
+    color: #fff;
   }
 }
 

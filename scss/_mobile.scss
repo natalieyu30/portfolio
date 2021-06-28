@@ -1,13 +1,38 @@
 // wide screens
 @include mediaXl {
-  .projects {
-    // width: 80%;
-    // margin: 0 auto;
+  // .projects {
+  // width: 80%;
+  // margin: 0 auto;
+  // }
+  #contact {
+    .lg-heading,
+    .sm-heading {
+      margin-left: 10rem;
+    }
   }
 }
 
 // desktops & laptops
 @include mediaLg {
+  .boxes {
+    .contact-image {
+      max-width: 380px;
+      margin-right: 32px;
+    }
+  }
+  // #work {
+  //   h1,
+  //   h2 {
+  //     padding-left: 1.25rem;
+  //   }
+  // }
+
+  // #contact {
+  //   .lg-heading,
+  //   .sm-heading {
+  //     margin-left: 20rem;
+  //   }
+  // }
 }
 
 // tablets & small laptops
@@ -22,6 +47,12 @@
   }
   .menu.show {
     width: 100%;
+  }
+  #home {
+    .icons {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
   #about,
   #work,
@@ -53,7 +84,17 @@
     }
     .contact-box {
       margin-top: 2rem;
-      text-align: start;
+      align-content: center;
+      padding: 0 2rem;
+      .info {
+        text-align: start;
+      }
+      .icons {
+        position: fixed;
+        bottom: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

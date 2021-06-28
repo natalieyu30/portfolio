@@ -1,6 +1,6 @@
 .menu-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 10;
   right: 35px;
   top: 35px;
   cursor: pointer;
@@ -48,7 +48,8 @@
     right: 0;
     width: 50%;
     height: 100vh;
-    background: linear-gradient(darken($primary-color, 5), darken(#eee, 15));
+    background: linear-gradient(rgba($primary-color, 0.6), rgba(#333, 0.7));
+    backdrop-filter: blur(5px);
     // background: $primary-color;
     transform: translate(0, 0);
     @include transition;
@@ -101,7 +102,7 @@
       transform: translate(0, 0);
     }
     &.current > a {
-      color: darken($primary-color, 10);
+      color: $secondary-color;
     }
   }
 
@@ -116,7 +117,7 @@
     @include transition;
 
     &:hover {
-      color: darken($primary-color, 5);
+      color: darken($secondary-color, 5);
     }
   }
 }
